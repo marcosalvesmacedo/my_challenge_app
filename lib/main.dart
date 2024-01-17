@@ -17,6 +17,7 @@ class MyChallengeApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const Auth(title: 'My Challenge App'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
