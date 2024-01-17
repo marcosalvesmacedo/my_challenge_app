@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_challenge_app/features/auth/presentation/auth.dart';
+import 'package:my_challenge_app/features/auth/presentation/remember.dart';
 
 void main() {
   runApp(const MyChallengeApp());
@@ -16,7 +17,7 @@ class MyChallengeApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Auth(title: 'My Challenge App'),
+      home: const Remember(),
       debugShowCheckedModeBanner: false,
     );
   }

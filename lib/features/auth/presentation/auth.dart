@@ -17,7 +17,11 @@ class _AuthState extends State<Auth> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Text('My Challenge App'),
+              const Text(
+                'My Challenge App',
+              ),
+              Text('Challenge App',
+                  style: Theme.of(context).textTheme.headlineMedium)
             ],
           ),
         ),
