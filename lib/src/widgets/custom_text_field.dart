@@ -14,13 +14,14 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         enabledBorder: const UnderlineInputBorder(
           borderSide: BorderSide(
-            color: Color(0xFFFFFFFF),
+            color: Color(0xFF667b68),
           ),
         ),
         focusedBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(
-          color: Color(0xFF027353),
-        )),
+          borderSide: BorderSide(
+            color: Color(0xFF027353),
+          ),
+        ),
         hintText: hintText,
         hintStyle: const TextStyle(
           color: Color(0xFFFFFFFF),
