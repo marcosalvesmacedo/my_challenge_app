@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_challenge_app/features/auth/presentation/auth.dart';
-import 'package:my_challenge_app/features/auth/presentation/remember.dart';
+import 'package:my_challenge_app/src/features/auth/presentation/auth.dart';
+import 'package:my_challenge_app/src/features/auth/presentation/remember.dart';
 
 void main() {
   runApp(const MyChallengeApp());
