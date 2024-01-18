@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_challenge_app/features/auth/presentation/auth.dart';
 import 'package:my_challenge_app/features/auth/presentation/remember.dart';
+import 'package:my_challenge_app/utils/app_routes.dart';
 
 void main() {
   runApp(const MyChallengeApp());
@@ -11,15 +12,13 @@ class MyChallengeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'My Challenge App',
-      home: Auth(title: 'My Challenge App'),
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Remember(),
       debugShowCheckedModeBanner: false,
+      routes: {
+        AppRoutes.auth: (ctx) => const Auth(title: 'Login - Challenge'),
+        AppRoutes.remember: (ctx) => const Remember(),
+      },
     );
   }
 }

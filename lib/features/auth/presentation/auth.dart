@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:my_challenge_app/utils/app_routes.dart';
+import 'components/cpf_validator.dart';
+import 'components/password_input.dart';
+
 class Auth extends StatefulWidget {
   const Auth({Key? key, required this.title}) : super(key: key);
   final String title;
@@ -9,6 +13,10 @@ class Auth extends StatefulWidget {
 }
 
 class _AuthState extends State<Auth> {
+  bool _passwordIsValid = true;
+  bool _cpfIsValid = true;
+  bool _isButtonClicked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,37 +44,50 @@ class _AuthState extends State<Auth> {
                     ),
                   ),
                   const SizedBox(height: 50),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'CPF',
-                        hintStyle: TextStyle(color: Colors.white),
-                      ),
-                      keyboardType: TextInputType.number,
+                  CpfInput(
+                    decoration: const InputDecoration(
+                      hintText: 'CPF',
+                      hintStyle: TextStyle(color: Colors.white),
                     ),
+                    style: const TextStyle(color: Colors.white),
+                    onChanged: (value) {
+                      setState(() {
+                        if (_isButtonClicked) {
+                          _cpfIsValid = value.length ==
+                              14; // Adicione sua lógica de validação de CPF aqui, se necessário
+                        }
+                      });
+                    },
                   ),
                   const SizedBox(height: 10),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Senha (não é a senha do cartão)',
-                        hintStyle: TextStyle(color: Colors.white),
-                        suffixIcon:
-                            Icon(Icons.remove_red_eye, color: Colors.white),
-                      ),
-                      obscureText: true,
-                    ),
+                  PasswordInput(
+                    onChanged: (value) {
+                      setState(() {
+                        if (_isButtonClicked) {
+                          _passwordIsValid = value.length >= 6;
+                        }
+                      });
+                    },
+                    errorText: _passwordIsValid ? null : 'Senha inválida',
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        _isButtonClicked = true;
+                      });
+
+                      if (_cpfIsValid && _passwordIsValid) {
+                        // Lógica de autenticação
+                      } else {
+                        // Trate CPF ou senha inválidos conforme necessário
+                      }
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF027353),
                       shape: const RoundedRectangleBorder(),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 100.0, vertical: 18.0),
+                          horizontal: 140.0, vertical: 18.0),
                     ),
                     child: const Text(
                       'ENTRAR',
@@ -74,10 +95,15 @@ class _AuthState extends State<Auth> {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      foregroundColor: Colors.white,
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppRoutes.remember);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF027353),
+                      shape: const RoundedRectangleBorder(),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 100.0, vertical: 18.0),
                     ),
                     child: const Text(
                       'Esqueci minha senha',
