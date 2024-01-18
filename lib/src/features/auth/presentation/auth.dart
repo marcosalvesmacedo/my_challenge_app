@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:my_challenge_app/utils/app_routes.dart';
-import 'components/cpf_validator.dart';
-import 'components/password_input.dart';
+import 'package:my_challenge_app/src/utils/app_routes.dart';
+
+import '../../../widgets/cpf_validator.dart';
+import '../../../widgets/password_input.dart';
+
+
 
 class Auth extends StatefulWidget {
   const Auth({Key? key, required this.title}) : super(key: key);
