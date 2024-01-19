@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:my_challenge_app/src/utils/app_routes.dart';
+
 import '../../../widgets/cpf_validator.dart';
 import '../../../widgets/password_input.dart';
 
@@ -25,7 +27,6 @@ class _AuthState extends State<Auth> {
               width: MediaQuery.of(context).size.width,
               padding: const EdgeInsets.symmetric(
                 horizontal: 20,
-                vertical: 110,
               ),
               color: const Color(0xFFCDDC3B),
               child: Column(
@@ -61,7 +62,7 @@ class _AuthState extends State<Auth> {
                     decoration: const InputDecoration(
                       hintText: 'CPF',
                       hintStyle: TextStyle(
-                        color: Color(0xFF667b68), // Removido ponto e vírgula
+                        color: Color(0xFF667b68),
                       ),
                     ),
                     style: const TextStyle(color: Colors.white),
@@ -84,15 +85,16 @@ class _AuthState extends State<Auth> {
                     },
                     errorText: _passwordIsValid ? null : 'Senha inválida',
                   ),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 40),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF027353),
-                        shape:
-                            const RoundedRectangleBorder(), // Adicionado 'BorderRadius'
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(
+                                8.0)), // Adicionado 'BorderRadius'
                         padding: const EdgeInsets.symmetric(
                           horizontal: 6.0,
                           vertical: 18.0,
@@ -109,10 +111,10 @@ class _AuthState extends State<Auth> {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 25),
                 ],
               ),
             ),
-            const SizedBox(height: 50),
             Container(
               width: MediaQuery.of(context).size.width,
               padding: const EdgeInsets.symmetric(
@@ -120,23 +122,66 @@ class _AuthState extends State<Auth> {
                 vertical: 20,
               ),
               color: const Color(0xFFFFFFFF),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed(AppRoutes.rememberMe);
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF027353),
-                  shape:
-                      const RoundedRectangleBorder(), // Adicionado 'BorderRadius'
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 5.0,
-                    vertical: 20.0,
-                  ),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 40,
                 ),
-                child: const Text(
-                  'Esqueci minha senha',
-                  style: TextStyle(color: Colors.white),
+                color: const Color(0xFFFFFFFF),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF027353),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 5.0,
+                            vertical: 20.0,
+                          ),
+                        ),
+                        child: const Text(
+                          'Esqueci minha senha',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 30),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(AppRoutes.register);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF027353),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 5.0,
+                            vertical: 20.0,
+                          ),
+                        ),
+                        child: const Text(
+                          'Registre-se',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
+              ),
+            ),
+            const Text(
+              'Uma conta Challenge para consulta de saldo e extra',
+              style: TextStyle(
+                color: Color(0xFF027353),
               ),
             ),
           ],

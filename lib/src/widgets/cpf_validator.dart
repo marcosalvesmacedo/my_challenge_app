@@ -6,7 +6,8 @@ class CpfInput extends StatefulWidget {
   const CpfInput({
     Key? key,
     required InputDecoration decoration,
-    required TextStyle style, required Null Function(dynamic value) onChanged,
+    required TextStyle style,
+    required Null Function(dynamic value) onChanged,
   }) : super(key: key);
 
   @override
@@ -30,7 +31,7 @@ class _CpfInputState extends State<CpfInput> {
         controller: _controller,
         decoration: InputDecoration(
           hintText: 'CPF',
-          hintStyle: const TextStyle(color: Colors.white),
+          hintStyle: const TextStyle(color: Color(0xFF667b68)),
           errorText: _isValid ? null : 'CPF inválido',
         ),
         keyboardType: TextInputType.number,

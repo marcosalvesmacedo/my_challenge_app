@@ -1,4 +1,4 @@
 class AppRoutes {
   static const auth = '/';
-  static const rememberMe = '/remember';
+  static const register = '/register';
 }

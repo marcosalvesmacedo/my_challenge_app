@@ -27,7 +27,7 @@ class _PasswordInputState extends State<PasswordInput> {
         controller: _controller,
         decoration: InputDecoration(
           hintText: 'Senha (não é a senha do cartão)',
-          hintStyle: const TextStyle(color: Colors.white),
+          hintStyle: const TextStyle(color: Color(0xFF667b68)),
           errorText: widget.errorText,
           suffixIcon: IconButton(
             icon: Icon(
