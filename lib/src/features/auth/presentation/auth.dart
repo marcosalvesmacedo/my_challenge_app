@@ -5,8 +5,6 @@ import 'package:my_challenge_app/src/utils/app_routes.dart';
 import '../../../widgets/cpf_validator.dart';
 import '../../../widgets/password_input.dart';
 
-
-
 class Auth extends StatefulWidget {
   const Auth({Key? key, required this.title}) : super(key: key);
   final String title;
@@ -100,7 +98,7 @@ class _AuthState extends State<Auth> {
                   const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed(AppRoutes.remember);
+                      Navigator.of(context).pushNamed(AppRoutes.rememberMe);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF027353),

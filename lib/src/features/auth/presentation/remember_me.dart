@@ -22,7 +22,7 @@ class _RememberState extends State<Remember> {
               Column(
                 children: <Widget>[
                   Expanded(
-                    flex: 2,
+                    flex: 4,
                     child: SingleChildScrollView(
                       child: Container(
                         width: MediaQuery.of(context).size.width,
@@ -34,6 +34,17 @@ class _RememberState extends State<Remember> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
+                            FittedBox(
+                              child: SizedBox(
+                                width: 150,
+                                height: 150,
+                                child: Image.asset(
+                                    'assets/images/challenge_logo.png'),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
                             const Text(
                               Constants.titleRememberMe,
                               style: TextStyle(
@@ -105,7 +116,7 @@ class _RememberState extends State<Remember> {
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 40,
+                        horizontal: 20,
                         vertical: 20,
                       ),
                       color: const Color(0xFFFFFFFF),
