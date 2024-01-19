@@ -9,7 +9,7 @@ void main() {
 }
 
 class MyChallengeApp extends StatelessWidget {
-  const MyChallengeApp({super.key});
+  const MyChallengeApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class MyChallengeApp extends StatelessWidget {
       title: 'My Challenge App',
       debugShowCheckedModeBanner: false,
       routes: {
-        AppRoutes.auth: (ctx) => const Auth(title: 'Login - Challenge'),
+        AppRoutes.auth: (ctx) => const Auth(),
         AppRoutes.rememberMe: (ctx) => const Remember(),
       },
     );
