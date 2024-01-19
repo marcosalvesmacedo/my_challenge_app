@@ -131,6 +131,16 @@ class _RememberState extends State<Remember> {
                               Navigator.of(context).pop();
                             },
                           ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const Text(
+                            Constants.footterTextoTelaLogin,
+                            style: TextStyle(
+                              color: Color(0xFF027353),
+                              fontSize: 10,
+                            ),
+                          ),
                         ],
                       ),
                     ),

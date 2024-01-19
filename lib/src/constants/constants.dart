@@ -8,4 +8,6 @@ class Constants {
   static const fieldRepetirSenha = 'Confirmar senha';
   static const buttonCadastrar = 'CADASTRAR';
   static const buttonVoltarParaLogin = 'Voltar para login';
+  static const footterTextoTelaLogin =
+      'Uma conta challenge para consulta de saldo/extrato e região de aceitação';
 }
