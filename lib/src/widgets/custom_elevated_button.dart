@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final String label;
-  final VoidCallback?
-      onPressed; // pode ser usado também o Function ao invés do VoidCallback
-
+  final VoidCallback? onPressed;
+  // pode ser usado o Function ao inves do VoidCallback.
   const CustomElevatedButton({
     required Key key,
     required this.onPressed,
@@ -19,7 +18,7 @@ class CustomElevatedButton extends StatelessWidget {
         backgroundColor: const Color(0xFF027353),
         fixedSize: const Size(310, 40),
         shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(0)),
+          borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),
       ),
       child: Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_challenge_app/src/constants/constants.dart';
 
 import 'package:my_challenge_app/src/utils/app_routes.dart';
 
@@ -134,7 +135,9 @@ class _AuthState extends State<Auth> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(AppRoutes.rememberMe);
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF027353),
                           shape: RoundedRectangleBorder(
@@ -179,9 +182,11 @@ class _AuthState extends State<Auth> {
               ),
             ),
             const Text(
-              'Uma conta Challenge para consulta de saldo e extra',
+              textAlign: TextAlign.center,
+              Constants.footterTextoTelaLogin,
               style: TextStyle(
                 color: Color(0xFF027353),
+                fontSize: 12,
               ),
             ),
           ],

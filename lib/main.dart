@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_challenge_app/src/features/auth/presentation/remember_me.dart';
 
 import 'src/features/auth/presentation/auth.dart';
 import 'src/features/auth/presentation/register.dart';
@@ -18,7 +19,8 @@ class MyChallengeApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         AppRoutes.auth: (ctx) => const Auth(),
-        AppRoutes.register: (ctx) => const Remember(),
+        AppRoutes.register: (ctx) => const Register(),
+        AppRoutes.rememberMe: (ctx) => const RememberMe(),
       },
     );
   }

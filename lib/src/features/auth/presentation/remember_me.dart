@@ -3,14 +3,14 @@ import 'package:my_challenge_app/src/constants/constants.dart';
 import 'package:my_challenge_app/src/widgets/custom_elevated_button.dart';
 import 'package:my_challenge_app/src/widgets/custom_text_field.dart';
 
-class Register extends StatefulWidget {
-  const Register({super.key});
+class RememberMe extends StatefulWidget {
+  const RememberMe({super.key});
 
   @override
-  State<Register> createState() => _RegisterState();
+  State<RememberMe> createState() => _RememberMeState();
 }
 
-class _RegisterState extends State<Register> {
+class _RememberMeState extends State<RememberMe> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,45 +65,17 @@ class _RegisterState extends State<Register> {
                               height: 20,
                             ),
                             const CustomTextField(
-                              key: ValueKey(Constants.fieldName),
-                              hintText: Constants.fieldName,
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            const CustomTextField(
-                              key: ValueKey(Constants.fieldCPF),
-                              hintText: Constants.fieldCPF,
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            const CustomTextField(
                               key: ValueKey(Constants.fieldEmail),
                               hintText: Constants.fieldEmail,
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            const CustomTextField(
-                              key: ValueKey(Constants.fieldCriarSenha),
-                              hintText: Constants.fieldCriarSenha,
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            const CustomTextField(
-                              key: ValueKey(Constants.fieldRepetirSenha),
-                              hintText: Constants.fieldRepetirSenha,
                             ),
                             const SizedBox(
                               height: 50,
                             ),
                             CustomElevatedButton(
-                              key: const ValueKey(Constants.buttonCadastrar),
-                              label: Constants.buttonCadastrar,
+                              key: const ValueKey(Constants.buttonResgatar),
+                              label: Constants.buttonResgatar,
                               onPressed: () {
-                                print('botão de cadastrar');
+                                print('botão de recuperar senha');
                               },
                             ),
                           ],
