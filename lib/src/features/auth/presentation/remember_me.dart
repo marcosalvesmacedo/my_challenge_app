@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_challenge_app/src/constants/constants.dart';
+import 'package:my_challenge_app/src/validators/validators.dart';
 import 'package:my_challenge_app/src/widgets/custom_elevated_button.dart';
 import 'package:my_challenge_app/src/widgets/custom_text_field.dart';
 
@@ -64,9 +65,32 @@ class _RememberMeState extends State<RememberMe> {
                             const SizedBox(
                               height: 20,
                             ),
-                            const CustomTextField(
-                              key: ValueKey(Constants.fieldEmail),
-                              hintText: Constants.fieldEmail,
+                            TextFormField(
+                              autovalidateMode:
+                                  AutovalidateMode.onUserInteraction,
+                              validator: (value) {
+                                return Validators.emailValidator(
+                                    value.toString());
+                              },
+                              keyboardType: TextInputType.emailAddress,
+                              decoration: const InputDecoration(
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0xFF667b68),
+                                  ),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0xFF027353),
+                                  ),
+                                ),
+                                hintText: Constants.fieldEmail,
+                                hintStyle: TextStyle(
+                                  color: Color(0xFF027353),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                             const SizedBox(
                               height: 50,

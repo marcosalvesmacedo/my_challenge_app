@@ -15,6 +15,11 @@ class Constants {
   static const buttonVoltarParaLogin = 'Voltar para login';
   static const footterTextoTelaLogin =
       'Uma conta challenge para consulta de saldo/extrato e região de aceitação';
+  static const invalidCPF = 'Por favor entre um CPF valido.';
+  static const invalidName = 'Por favor entre um nome valido.';
+  static const invalidEmail = 'Por favor entre um e-mail valido.';
+  static const invalidField = 'Campo obrigatório.';
+  static const emptyString = '';
   static const register = 'Registre-se';
   static const forgetPass = 'Esqueci minha senha';
 }

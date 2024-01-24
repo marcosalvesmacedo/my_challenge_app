@@ -29,6 +29,7 @@ class PasswordInputState extends State<PasswordInput> {
           hintText: 'Senha (não é a senha do cartão)',
           hintStyle: const TextStyle(color: Color(0xFF027353),
           fontWeight: FontWeight.bold),
+          hintStyle: const TextStyle(color: Colors.white),
           errorText: widget.errorText,
           suffixIcon: IconButton(
             icon: Icon(
