@@ -1,35 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:flutter/services.dart';
 
 //ignore: must_be_immutable
-class CustomTextField extends StatefulWidget {
+class CustomTextFormField extends StatefulWidget {
   final String hintText;
-  final String errorText;
   final TextInputType keyboardType;
-  final MaskTextInputFormatter inputFormatters;
-  final void Function(dynamic value) onChanged;
-  bool isValid = true;
+  List<TextInputFormatter> inputFormatters;
+  final String Function(dynamic value) validator;
 
-  CustomTextField({
+  CustomTextFormField({
     required Key key,
     required this.hintText,
-    required this.errorText,
-    required this.isValid,
     required this.keyboardType,
     required this.inputFormatters,
-    required this.onChanged,
+    required this.validator,
   }) : super(key: key);
 
   @override
-  _CustomTextFieldState createState() => _CustomTextFieldState();
+  _CustomTextFormFieldState createState() => _CustomTextFormFieldState();
 }
 
-class _CustomTextFieldState extends State<CustomTextField> {
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: widget.validator,
       keyboardType: widget.keyboardType,
-      inputFormatters: [widget.inputFormatters],
+      inputFormatters: widget.inputFormatters,
       decoration: InputDecoration(
         enabledBorder: const UnderlineInputBorder(
           borderSide: BorderSide(
@@ -42,14 +39,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
           ),
         ),
         hintText: widget.hintText,
-        errorText: widget.isValid ? null : widget.errorText,
         hintStyle: const TextStyle(
           color: Color(0xFF027353),
           fontSize: 14,
           fontWeight: FontWeight.bold,
         ),
       ),
-      onChanged: widget.onChanged,
     );
   }
 }

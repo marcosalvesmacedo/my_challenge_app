@@ -64,10 +64,10 @@ class _RememberMeState extends State<RememberMe> {
                             const SizedBox(
                               height: 20,
                             ),
-                            const CustomTextField(
+                            /* const CustomTextField(
                               key: ValueKey(Constants.fieldEmail),
                               hintText: Constants.fieldEmail,
-                            ),
+                            ), */
                             const SizedBox(
                               height: 50,
                             ),

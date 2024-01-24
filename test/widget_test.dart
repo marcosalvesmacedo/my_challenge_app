@@ -8,7 +8,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: const Auth(),
       routes: {
-        AppRoutes.remember: (context) => const Text('Remember Screen'),
+        AppRoutes.rememberMe: (context) => const Text('Remember Screen'),
       },
     ));
 

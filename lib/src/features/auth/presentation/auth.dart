@@ -16,7 +16,7 @@ class Auth extends StatefulWidget {
 class _AuthState extends State<Auth> {
   bool _passwordIsValid = true;
   bool _cpfIsValid = true;
-  final bool _isButtonClicked = false; // Removido 'final'
+  final bool _isButtonClicked = false;
 
   @override
   Widget build(BuildContext context) {
