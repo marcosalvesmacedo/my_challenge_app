@@ -31,7 +31,8 @@ class _CpfInputState extends State<CpfInput> {
         controller: _controller,
         decoration: InputDecoration(
           hintText: 'CPF',
-          hintStyle: const TextStyle(color: Color(0xFF667b68)),
+          hintStyle: const TextStyle(color: Color(0xFF027353),
+          fontWeight: FontWeight.bold),
           errorText: _isValid ? null : 'CPF inválido',
         ),
         keyboardType: TextInputType.number,

@@ -11,10 +11,10 @@ class PasswordInput extends StatefulWidget {
   final String? errorText;
 
   @override
-  _PasswordInputState createState() => _PasswordInputState();
+  PasswordInputState createState() => PasswordInputState();
 }
 
-class _PasswordInputState extends State<PasswordInput> {
+class PasswordInputState extends State<PasswordInput> {
   bool _passwordIsValid = true;
   final TextEditingController _controller = TextEditingController();
   bool _isObscured = true;
@@ -27,7 +27,8 @@ class _PasswordInputState extends State<PasswordInput> {
         controller: _controller,
         decoration: InputDecoration(
           hintText: 'Senha (não é a senha do cartão)',
-          hintStyle: const TextStyle(color: Color(0xFF667b68)),
+          hintStyle: const TextStyle(color: Color(0xFF027353),
+          fontWeight: FontWeight.bold),
           errorText: widget.errorText,
           suffixIcon: IconButton(
             icon: Icon(

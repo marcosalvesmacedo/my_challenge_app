@@ -16,7 +16,7 @@ class Auth extends StatefulWidget {
 class _AuthState extends State<Auth> {
   bool _passwordIsValid = true;
   bool _cpfIsValid = true;
-  final bool _isButtonClicked = false; // Removido 'final'
+  final bool _isButtonClicked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class _AuthState extends State<Auth> {
                     height: 20,
                   ),
                   const Text(
-                    'BEM-VINDO AO',
+                    Constants.welcomeAuth,
                     style: TextStyle(
                       color: Color(0xFF027353),
                       fontSize: 22,
@@ -51,7 +51,7 @@ class _AuthState extends State<Auth> {
                     ),
                   ),
                   const Text(
-                    'CHALLENGE =)',
+                    Constants.welcomeAuthSubtitle,
                     style: TextStyle(
                       color: Color(0xFF027353),
                       fontSize: 22,
@@ -61,7 +61,7 @@ class _AuthState extends State<Auth> {
                   const SizedBox(height: 50),
                   CpfInput(
                     decoration: const InputDecoration(
-                      hintText: 'CPF',
+                      hintText: Constants.fieldCPF,
                       hintStyle: TextStyle(
                         color: Color(0xFF667b68),
                       ),
@@ -105,7 +105,7 @@ class _AuthState extends State<Auth> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'ENTRAR',
+                            Constants.loginAuth,
                             style: TextStyle(color: Colors.white),
                           ),
                         ],
@@ -149,7 +149,7 @@ class _AuthState extends State<Auth> {
                           ),
                         ),
                         child: const Text(
-                          'Esqueci minha senha',
+                          Constants.forgetPass,
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -172,7 +172,7 @@ class _AuthState extends State<Auth> {
                           ),
                         ),
                         child: const Text(
-                          'Registre-se',
+                          Constants.register,
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
