@@ -3,6 +3,9 @@ import 'package:my_challenge_app/src/features/auth/presentation/remember_me.dart
 
 import 'src/features/auth/presentation/auth.dart';
 import 'src/features/auth/presentation/register.dart';
+
+import './src/widgets/tabs_navigator.dart';
+
 import 'src/utils/app_routes.dart';
 
 void main() {
@@ -21,6 +24,7 @@ class MyChallengeApp extends StatelessWidget {
         AppRoutes.auth: (ctx) => const Auth(),
         AppRoutes.register: (ctx) => const Register(),
         AppRoutes.rememberMe: (ctx) => const RememberMe(),
+        AppRoutes.home:(ctx) =>  TabNavigator(),
       },
     );
   }

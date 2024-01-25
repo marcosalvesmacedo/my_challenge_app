@@ -90,7 +90,9 @@ class _AuthState extends State<Auth> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(AppRoutes.home);
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF027353),
                         shape: RoundedRectangleBorder(
