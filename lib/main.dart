@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_challenge_app/src/constants/constants.dart';
 import 'package:my_challenge_app/src/features/settings/add_new_card.dart';
 import 'package:my_challenge_app/src/features/auth/presentation/remember_me.dart';
 
@@ -19,7 +20,7 @@ class MyChallengeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My Challenge App',
+      title: Constants.title,
       debugShowCheckedModeBanner: false,
       routes: {
         AppRoutes.auth: (ctx) => const Auth(),

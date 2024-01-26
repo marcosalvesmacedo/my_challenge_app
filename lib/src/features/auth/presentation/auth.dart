@@ -185,7 +185,7 @@ class _AuthState extends State<Auth> {
             ),
             const Text(
               textAlign: TextAlign.center,
-              Constants.footterTextoTelaLogin,
+              Constants.footterScreenTextLogin,
               style: TextStyle(
                 color: Color(0xFF027353),
                 fontSize: 12,

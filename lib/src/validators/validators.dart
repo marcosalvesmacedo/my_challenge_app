@@ -3,7 +3,7 @@ import 'package:my_challenge_app/src/constants/constants.dart';
 import 'package:my_challenge_app/src/constants/regexs.dart';
 
 class Validators {
-  static String nameValidator(String value) {
+  static dynamic nameValidator(String value) {
     if (value.isEmpty) {
       return Constants.invalidField;
     }
@@ -15,7 +15,7 @@ class Validators {
     return Constants.emptyString;
   }
 
-  static String cpfValidator(String value) {
+  static dynamic cpfValidator(String value) {
     if (value.isEmpty) {
       return Constants.invalidField;
     }
@@ -27,13 +27,37 @@ class Validators {
     return Constants.emptyString;
   }
 
-  static String emailValidator(String value) {
+  static dynamic emailValidator(String value) {
     if (value.isEmpty) {
       return Constants.invalidField;
     }
 
     if (!RegExp(Regexs.email).hasMatch(value)) {
       return Constants.invalidEmail;
+    }
+
+    return Constants.emptyString;
+  }
+
+  static dynamic passwordComplexityValidator(String value) {
+    if (value.isEmpty) {
+      return Constants.invalidField;
+    }
+
+    if (!RegExp(Regexs.passwordWeakness).hasMatch(value)) {
+      return Constants.invalidPassword;
+    }
+
+    return Constants.emptyString;
+  }
+
+  static dynamic passwordCompareValidator(String value, String valueToCompare) {
+    if (value.isEmpty) {
+      return Constants.invalidField;
+    }
+
+    if (value != valueToCompare) {
+      return Constants.invalidPasswordConfirm;
     }
 
     return Constants.emptyString;
