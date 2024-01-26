@@ -26,7 +26,7 @@ class MyChallengeApp extends StatelessWidget {
         AppRoutes.register: (ctx) => const Register(),
         AppRoutes.rememberMe: (ctx) => const RememberMe(),
         AppRoutes.home: (ctx) => const TabNavigator(),
-        AppRoutes.addCard: (ctx) => AddNewCardForm(),
+        AppRoutes.addCard: (ctx) => const AddNewCardScreen(),
       },
     );
   }
