@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_challenge_app/src/features/settings/add_new_card.dart';
 import 'package:my_challenge_app/src/features/auth/presentation/remember_me.dart';
 
 import 'src/features/auth/presentation/auth.dart';
@@ -24,7 +25,8 @@ class MyChallengeApp extends StatelessWidget {
         AppRoutes.auth: (ctx) => const Auth(),
         AppRoutes.register: (ctx) => const Register(),
         AppRoutes.rememberMe: (ctx) => const RememberMe(),
-        AppRoutes.home:(ctx) =>  const TabNavigator(),
+        AppRoutes.home: (ctx) => const TabNavigator(),
+        AppRoutes.addCard: (ctx) => const AddNewCardScreen(),
       },
     );
   }
